@@ -17,14 +17,14 @@ export default {
         //
     },
     mounted() {
-        // const k = 'demo-bbb';
-        // LS.set(k, 'bbb');
+        const k = 'demo-bbb';
+        LS.set(k, 'bbb', { expiry: '5s' });
         // const a = LS.get('demo-aaa');
         // console.log(a);
         // console.log(a.timestampSaved);
         // console.log(a.value);
         // console.log(new Date(a.timestampSaved));
-        console.log(LS.getSurplusCapacityKb());
+        console.log(LS.getAll());
     },
     methods: {
         //
