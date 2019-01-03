@@ -1,11 +1,11 @@
 {
   "name": "@realign-zone/local-storage",
   "filename": "local-storage",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "localstorage",
-  "main": "dist/localstorage.cjs.js",
-  "module": "dist/localstorage.esm.js",
-  "unpkg": "dist/localstorage.min.js",
+  "main": "dist/local-storage.cjs.min.js",
+  "module": "dist/local-storage.esm.min.js",
+  "unpkg": "dist/local-storage.min.js",
   "scripts": {
     "cz": "git-cz",
     "clean": "rimraf dist",
