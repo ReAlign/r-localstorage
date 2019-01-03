@@ -1,7 +1,7 @@
 {
   "name": "@realign-zone/local-storage",
   "filename": "local-storage",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "localstorage",
   "main": "dist/localstorage.cjs.js",
   "module": "dist/localstorage.esm.js",
