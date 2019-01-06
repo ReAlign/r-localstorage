@@ -44,9 +44,7 @@ class LocalStorage {
                 }
                 // 错误
                 else {
-                    _.formatConsole({
-                        con: 'expiry format error!!!'
-                    });
+                    _.formatConsole({ con: 'expiry format error!!!' });
                     console.error(_.errText);
                     return null;
                 }
@@ -61,9 +59,7 @@ class LocalStorage {
                     'if you want to cover the original data, please use: set(key, value, { ..., cover: true })'
                 ];
 
-                _.formatConsole({
-                    con: _.makeConsoleStr(conStrArr)
-                });
+                _.formatConsole({ con: _.makeConsoleStr(conStrArr) });
                 console.error(_.errText);
                 return false;
             }

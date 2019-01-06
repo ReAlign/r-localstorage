@@ -23,144 +23,120 @@
 
 ### ES6
 
-```javascript
+```js
 import LS from '@realign-zone/local-storage';
 ```
 
 ### UMD
 
-```javascript
+```js
 // download files
-use n-localstorage/dist/local-storage.umd.min.js
+use @realign-zone/local-storage/dist/local-storage.umd.min.js
 ```
 
 ### Browser
 
 ```html
 <script src="/local-storage.js"></script>
+<script>
+    LocalStorage.get('xxx');
+</script>
 ```
 
 ***
 
 ```js
 $VALUE = {
-    timestampSaved: timestamp,
+    createTime: timestamp,
     value
 };
 ```
 
-#### set(key, value, cover)
+### API
 
-```html
-存储数据，返回 set 的对象
-* set(key, value, {cover: false})
-* @params key
-* @params value
-* @params cover 是否覆盖
-* return {
-    key: key,
-    value: $VALUE
-}
+#### set(key, value, opts)
 
-Example:
+> 存储数据，返回 set 的对象
 
-LS.set('name', 'realign');
-/**
-return
-{
-    key: 'name',
-    val: {
-        timestampSaved: 1546493631111,
-        value: 'realign'
-    }
-}
-*/
+
+| args | description | note |
+| --- | --- | --- |
+| key | 存储数据的key |  |
+| value | 存储数据的实际值 |  |
+| opts | .cover: 是否覆盖已存在的数据 |  |
+|  | .expiry: 有效期【时间戳/时长描述】 | 时间戳：有效截止时间点，eg：1546786492336<br>时长描述：数据存活时长，eg：1ms，2s，3m，4h，5d、6w，7mo，8y |
+
+```js
+// Example
+LS.set('author', {name: 'realign', age: 16}, {expiry: '3y'});
+
+return { key, val: $VALUE };
 ```
 
 #### get(key)
 
-```html
-获取数据，返回 对应值（会保持原来的数据类型）
-* get(key)
-* return $VALUE
+> 获取数据，返回 对应值（会保持原来的数据类型）
 
-Example:
-
+```js
+// Example
 LS.get('name');
+return $VALUE
 ```
 
 #### has(key)
 
-```html
-判断是否存在此 key，返回 boolean
-* has(key)
-* return boolean
+> 判断是否存在此 key，返回 boolean
 
-Example:
-
+```js
+// Example
 LS.has('name'); // true
 LS.has('my'); // false
 ```
 
 #### remove(key)
 
-```html
-删除 key 对应的这条数据，
-返回 boolean，该条数据是否仍存在
-    已成功删除 true（传入不存在的key，仍会返回 true）
-    未成功删除 false
-* remove(key)
-* return boolean
+> 删除 key 对应的这条数据，返回 boolean，该条数据是否仍存在
 
-Example:
+* 已成功删除 true（传入不存在的key，仍会返回 true）
+* 未成功删除 false
 
+```js
+// Example
 LS.remove('name'); // true
 ```
 
 #### clear
 
-```html
-清空当前域下 localstorage 数据
-* clear()
-* return boolean
+> 清空当前域下 localstorage 数据
 
-Example:
-
+```js
+// Example
 LS.clear(); // true
 ```
 
 #### getKeyList
 
-```html
-获取 localstorage 所有 key
-* getKeyList()
-* return array 默认 []
+> 获取 localstorage 所有 key
 
-Example:
-
+```js
+// Example
 LS.getKeyList(); // ['name', 'age']
 ```
 
 #### getAll
 
-```html
-获取 localstorage 所有 数据
-* getAll()
-* return object 默认 {}
+> 获取 localstorage 所有 数据
 
-Example:
-
+```js
+// Example
 LS.getAll(); // { 'name': $VALUE, 'age': $VALUE }
 ```
 
 #### getSurplusCapacityKb
 
-```html
-获取 localstorage 剩余容量（kb）
-* getSurplusCapacityKb()
-* return number
+> 获取 localstorage 剩余容量（kb）
 
-Example:
-
+```js
+// Example
 LS.getSurplusCapacityKb(); // 5119.998046875
 ```
