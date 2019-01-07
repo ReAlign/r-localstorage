@@ -1,8 +1,8 @@
 {
   "name": "@realign-zone/local-storage",
   "filename": "local-storage",
-  "version": "1.0.1",
-  "description": "localstorage",
+  "version": "1.1.0",
+  "description": "Encapsulate a LocalStorage Class, just use it",
   "main": "dist/local-storage.cjs.min.js",
   "module": "dist/local-storage.esm.min.js",
   "unpkg": "dist/local-storage.min.js",
@@ -26,7 +26,16 @@
     "url": "https://github.com/ReAlign/r-localstorage/issues"
   },
   "homepage": "https://github.com/ReAlign/r-localstorage#readme",
-  "keywords": [],
+  "keywords": [
+    "localstorage",
+    "local storage",
+    "localStorage",
+    "cache",
+    "local cache",
+    "expiry",
+    "serialization",
+    "deserialization"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
