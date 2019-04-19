@@ -1,7 +1,7 @@
 {
   "name": "@realign-zone/local-storage",
   "filename": "local-storage",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "Encapsulate a LocalStorage Class, just use it",
   "main": "dist/local-storage.cjs.min.js",
   "module": "dist/local-storage.esm.min.js",
@@ -65,6 +65,8 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-2": "^6.24.1",
+    "babel-preset-es2015-rollup": "3.0.0",
+    "babel-preset-stage-0": "6.24.1",
     "commitizen": "^2.9.6",
     "commitlint-config-cz": "^0.7.0",
     "cross-env": "^5.1.3",

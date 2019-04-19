@@ -25,6 +25,7 @@ export default {
     }),
     babel({
       runtimeHelpers: true,
+      presets: ['es2015-rollup', 'stage-0'], //转ES5的插件;
       exclude: 'node_modules/**' // only transpile our source code
     })
   ]
